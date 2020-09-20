@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".ListaFiltraPaciente">
+
+
+    <EditText
+        android:id="@+id/edPaciente"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Filtrar por Paciente"
+        android:inputType="text"
+        android:textColor="#0d47a1"
+        android:textColorHint="#90a4ae" />
+
+    <EditText
+        android:id="@+id/edAgendamento"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:hint="Filtrar por Data de Agendamento"
+        android:textColorHint="#90a4ae"
+        android:textColor="#0d47a1"
+        android:layout_marginTop="0dp"
+        android:layout_below="@id/edPaciente" />
+
+    <EditText
+        android:id="@+id/edDoutor"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:hint="Filtrar por Médico"
+        android:textColor="#0d47a1"
+        android:textColorHint="#90a4ae"
+        android:layout_marginTop="0dp"
+        android:layout_below="@id/edAgendamento"/>
+
+    <Button
+        android:id="@+id/listar"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center|center_vertical"
+        android:textColor="#383C70"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:onClick="listar"
+        android:text="BUSCAR"
+        android:textAlignment="center"
+        android:drawableLeft="@drawable/busca"
+        android:layout_below="@id/edDoutor"
+        android:background="#bbdefb"/>
+
+
+    <ListView
+        android:id="@+id/lstConsulta"
+        android:layout_width="match_parent"
+        android:layout_height="348dp"
+        android:layout_below="@id/listar"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:dividerHeight="0dp"
+        android:orientation="vertical">
+
+    </ListView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonFinalizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/listar"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:onClick="finalizar"
+        app:srcCompat="@drawable/finalize"
+        app:backgroundTint="#bbdefb"
+        android:layout_below="@id/lstConsulta"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lstConsulta"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@id/buttonFinalizar"
+        android:clickable="true"
+        android:onClick="voltar"
+        app:backgroundTint="#bbdefb"
+        app:layout="@id/buttonFinalizar"
+        app:srcCompat="@drawable/volta" />
+
+
+</RelativeLayout>
